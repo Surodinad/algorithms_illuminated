@@ -14,12 +14,24 @@ std::vector<int> get_number(std::istream& is) {
     return vnum;
 }
 
-//TODO adjusting to power of 2
+bool is_pow_of_two(size_t n) {
+    if (n == 0) {
+        return false;
+    }
+    else {
+        return (n & (n - 1)) == 0;
+    }
+}
+
+// adjusting to power of 2 more than n
 void adjust_the_size(std::vector<int>& cnt, size_t n) {
     if (cnt.size() < n) {
         while (cnt.size() < n) {
             cnt.push_back(0);
         }
+    }
+    while (!is_pow_of_two(cnt.size())) {
+        cnt.push_back(0);
     }
 }
 
@@ -44,5 +56,6 @@ int main() {
         std::cout << dig;
     }
     std::cout << std::endl;
+
     return 0;
 }
