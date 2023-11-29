@@ -14,7 +14,7 @@ std::vector<int> get_number(std::istream& is) {
     return vnum;
 }
 
-//TODO adjusting to exponent of 2
+//TODO adjusting to power of 2
 void adjust_the_size(std::vector<int>& cnt, size_t n) {
     if (cnt.size() < n) {
         while (cnt.size() < n) {
